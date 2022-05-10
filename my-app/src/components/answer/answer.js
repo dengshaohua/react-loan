@@ -1,10 +1,11 @@
 import React from "react";
-
+import { Button } from "antd";
 
 export default function Answer(){
     return (
         <div>
-            答题页面
+           <Button>下一题</Button>
+           <Button>查看答案</Button>
         </div>
     )
 }

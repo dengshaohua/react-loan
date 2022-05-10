@@ -2,8 +2,8 @@ import React from 'react';
 import {Route,Routes,Link,Navigate} from 'react-router-dom';
 import "./index.css"
 import { Layout, Menu } from 'antd';
-import BackImage from './images/logo3.jpg'
-import BackImage2 from './images/logo2.jpg'
+import BackImage from './logo1.jpg'
+
 import Home from '../../components/home/home';
 import Answer from '../../components/answer/answer'
 import Allocation from '../../components/allocation/allocation'
@@ -76,22 +76,12 @@ class SiderDemo extends React.Component {
               height: 620,
               textAlign:'center',
               fontSize:70,
-              backgroundImage:`url(${BackImage2})`
-            }}
-          >
+            }}>
           <Routes>
           <Route path="/" element={<Navigate to="/home" />}></Route>
-          <Route key="/home" exact path="/home" element={<Home />}></Route>
-          <Route
-            key="/answer"
-            path="/answer"
-            element={<Answer />}
-          ></Route>
-          <Route
-            key="/allcoation"
-            path="/Allocation"
-            element={<Allocation />}
-          ></Route>
+          <Route  exact path="/home" element={<Home />}></Route>
+          <Route path="/answer" element={<Answer />}></Route>
+          <Route path="/Allocation" element={<Allocation />}></Route>
         </Routes>
           </Content>
         </Layout>

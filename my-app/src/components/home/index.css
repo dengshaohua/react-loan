@@ -1,3 +1,6 @@
+#home{
+    background-image: url('../../../public/images/logo2.jpg');
+}
 .item{
     width:120px;
     height:45px;
