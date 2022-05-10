@@ -1,0 +1,29 @@
+ .trigger {
+    padding:60px 4px;
+    font-size: 18px;
+    line-height: 64px;
+    cursor: pointer;
+    transition: color 0.3s;
+    
+  }
+  
+ trigger:hover {
+    color: #1890ff;
+  }
+  
+  .logo {
+    height: 32px;
+    line-height: 32px;
+    color:white;
+    margin: 16px;
+    background: rgba(255, 255, 255, 0.3);
+    font-size: 15px;
+    text-align: center;
+  }
+.headers {
+    /* background-image:"@pages/images/logo1.jpg";
+    
+    /* background-color: red; */
+    background-size:cover;
+    /* background-position: 50%; */
+  }
