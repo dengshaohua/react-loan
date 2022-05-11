@@ -1,5 +1,5 @@
-import React from 'react';
-import {Route,Routes,Link,Navigate} from 'react-router-dom';
+import React, { useState } from 'react';
+import {Route,Routes,Link,Navigate } from 'react-router-dom';
 import "./index.css"
 import { Layout, Menu } from 'antd';
 import BackImage from './logo1.jpg'
@@ -18,22 +18,20 @@ import {
 
 const { Header, Sider, Content } = Layout;
 
-class SiderDemo extends React.Component {
-  state = {
-    collapsed: false,
-  };
-
-  toggle = () => {
-    this.setState({
-      collapsed: !this.state.collapsed,
+export default function SiderDemo() {
+  
+  const [state, setState] = useState({
+      collapsed: false,
+  });
+  const toggle = () => {
+    setState({
+      collapsed: !state.collapsed,
     });
   };
-
-  render() {
     return ( 
       <Layout>
         
-        <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
+        <Sider trigger={null} collapsible collapsed={state.collapsed}>
           <div className="logo">知识竞赛</div>
           <Menu
             theme="dark"
@@ -61,33 +59,27 @@ class SiderDemo extends React.Component {
         <Layout className="site-layout">
         {/* 头部标签 */}
           <Header className="headers" style={{ padding: 0,height:110, backgroundImage:`url(${BackImage})`}}>
-            {React.createElement(this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
+            {React.createElement(state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
               className: 'trigger',
-              onClick: this.toggle,
+              onClick: toggle,
             })}
           </Header>
           {/* 内容区域 */}
           <Content
             className="site-layout-background"
             style={{
-              margin: '24px 16px',
-              lineHeight:"620px",
-              padding: 24,
-              height: 620,
-              textAlign:'center',
-              fontSize:70,
+              margin: '24px 0 0 16px',
+              padding:'10px 2px 0 10px',
+              minHeight:280,
             }}>
           <Routes>
-          <Route path="/" element={<Navigate to="/home" />}></Route>
-          <Route  exact path="/home" element={<Home />}></Route>
-          <Route path="/answer" element={<Answer />}></Route>
-          <Route path="/Allocation" element={<Allocation />}></Route>
-        </Routes>
+            <Route path="/" element={<Navigate  to="/home" />}></Route>
+            <Route  exact path="/home" element={<Home />}></Route>
+            <Route path="/answer" element={<Answer />}></Route>
+            <Route path="/Allocation" element={<Allocation />}></Route>
+            </Routes>
           </Content>
         </Layout>
       </Layout>
     );
   }
-}
-
-export default () => <SiderDemo />;
