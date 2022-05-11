@@ -1,7 +1,11 @@
-### `npm start`
+# 项目启动 npm run start
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# 环境
+1. react: "^18.1.0"
+2. antd: "^4.20.3"
+
+# 功能说明 ：实现一个答题系统，主要分为三块，首页、答题和配置
+1. 首页：点击答题按钮即可跳转答题页面
+2. 答题：答题页面包括题目，倒计时，下一题和查看答案。点击下一题进入一个新的题目，倒计时自动恢复至初始值，点击倒计时开始计时（若再点击一次可停止计时），时间耗尽自动弹出答案的提示框
+3. 配置：设置倒计时的默认值以及时间耗尽是否默认弹出提示框
